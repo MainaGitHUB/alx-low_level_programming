@@ -8,13 +8,15 @@ int main(void)
 	char a = 'a';
 	char A = 'A';
 	int n = 0;
+
 	while (n < 26)
 	{
 		if (n < 26)
 		{
 			putchar(a);
 			a++;
-		}else
+		}
+		else
 		{
 			putchar(A);
 			A++;
