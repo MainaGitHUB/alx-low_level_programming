@@ -13,6 +13,6 @@ while (n <= 57)
 	putchar(n);
 	n += 1;
 }
-printf('\n');
+printf("\n");
 return (0);
 }
