@@ -1,8 +1,9 @@
 #include <stdio.h>
+/* more headers goes there */
 /**
- * main - prints the lowercase alphabet in reverse
- * Return : 0 (Success)
-*/
+ * main - Program entry point
+ * Return: 0 on success. Error code otherwise
+ */
 int main(void)
 {
 	char alp;
