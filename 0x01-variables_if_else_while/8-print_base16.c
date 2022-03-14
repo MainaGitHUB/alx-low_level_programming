@@ -1,7 +1,8 @@
 #include <stdio.h>
-/* main - 
- * return
-*/
+/**
+ * main - Program entry point
+ * Return: 0 on success. Error code otherwise 
+ */
 int main(void)
 {
 	int n;
