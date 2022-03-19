@@ -6,7 +6,7 @@
  *     *
  *      * Return: void
  */
-void print-numbers(void)
+void print_numbers(void)
 {
 	char a;
 
