@@ -9,14 +9,26 @@
  */
 void print_sqaure(int size)
 {
+	/**
+	 * Where size is the size of the square
+	 * If size is 0 or less, the function should print only a new line
+	 * Use the character # to print the square
+	 */
 	int y, z;
 
-	for (y = 0; y < size; y++)
+	if (size > 0)
 	{
-		for (z = 0; z < size; z++)
-			_putchar('#');
+		for (i = 0; i < size; i++)
+		{
+			for (j = 0; j < size; j++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
+	else
+	{
 		_putchar('\n');
 	}
-	if (size < 1)
-		_putchar('\n');
 }
