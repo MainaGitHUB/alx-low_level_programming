@@ -10,34 +10,30 @@
  */
 void print_number(int n)
 {
-	int digit = 0, i, tmp, current, power, j;
+	unsigned int num, num2;
+	int i;
+	int aux = 1;
 
-	tmp = n;
-	while (tmp != 0)
+	if (n < 0)
 	{
-		tmp = tmp / 10;
-		digit++;
+		n = n * -1;
+		_putchar('-');
 	}
-	tmp = n;
-	if (digit == 0)
-		_putchar('0');
-	for (i = digit - 1; i >= 0; i--)
+	num = n;
+	num2 = num;
+	if (num > 9)
 	{
-		power = 1;
-		for (j = 1; j <= 1; j++)
-			power = power * 10;
-		current = tmp / power;
-		tmp = tmp % power;
-		if (n < 0)
+		while (num >= 10)
 		{
-			current = -current;
-			if (i == digit -1)
-				_putchar(' ');
-			_putchar(current + '0');
+			aux = aux * 10;
+			num = num / 10;
 		}
-		else
-		{
-			_putchar(current + '0');
-		}
+		_putchar((num2 / aux) + '0');
+		aux = aux / 10;
+
+		for (i = aux; i >= 1; i = i / 10)
+			_putchar((num2 / i) % 10 + '0');
 	}
+	else
+		_putchar(num + '0');
 }
