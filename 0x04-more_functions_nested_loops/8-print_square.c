@@ -7,7 +7,7 @@
  *      * Description: Draws a square
  *       * Return: 0 Value
  */
-void print_sqaure(int size)
+void print_square(int size)
 {
 	/**
 	 * Where size is the size of the square
