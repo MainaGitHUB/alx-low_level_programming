@@ -10,17 +10,34 @@
  */
 void print_number(int n)
 {
-	unsigned int k = n;
+	int digit = 0, i, tmp, current, power, j;
 
-	if (n < 0)
+	tmp = n;
+	while (tmp != 0)
 	{
-		n *= -1;
-		k = n;
-		_putchar ('_');
+		tmp = tmp / 10;
+		digit++;
 	}
-	k /= 10;
-
-	if (k != 0)
-		print_number(k);
-	_putchar((unsigned int) n % 10 + '0');
+	tmp = n;
+	if (digit == 0)
+		_putchar('0');
+	for (i = digit - 1; i >= 0; i--)
+	{
+		power = 1;
+		for (j = 1; j <= 1; j++)
+			power = power * 10;
+		current = tmp / power;
+		tmp = tmp % power;
+		if (n < 0)
+		{
+			current = -current;
+			if (i == digit -1)
+				_putchar(' ');
+			_putchar(current + '0');
+		}
+		else
+		{
+			_putchar(current + '0');
+		}
+	}
 }
