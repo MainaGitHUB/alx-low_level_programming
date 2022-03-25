@@ -6,7 +6,8 @@
  *     *
  *      * Description: This prints the numbers from 0 to 14, ten times
  *       * Return: 0 Value if it works
- */void more_numbers(void)
+ */
+void more_numbers(void)
 {
 	int a, b;
 
