@@ -1,11 +1,10 @@
 #include "main.h"
 /**
- *  * print_square - Draws a square
- *   * _putchar - Prints characters one by one
- *    * @size: Parameter of size
- *     *
- *      * Description: Draws a square
- *       * Return: 0 Value
+ *print_square - Draws a square
+ *_putchar - Prints characters one by one
+ *@size: Parameter of size
+ *Description: Draws a square
+ *Return: 0 Value
  */
 void print_square(int size)
 {

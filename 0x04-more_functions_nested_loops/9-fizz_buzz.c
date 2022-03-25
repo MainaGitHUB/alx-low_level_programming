@@ -1,38 +1,42 @@
-#include "main.h"
 #include <stdio.h>
 /**
- *  * main - test
- *   * @void: Parameter of times
- *    * Description test as an interviews to filter candidates
- *     * Return: 0 is success
+ * main - Entry point
+ * Return: always 0
  */
 int main(void)
 {
-	int a;
+	int i;
 
-	for ( a = 1; a <= 100; a++)
+	for (i = 1; i <= 100; i++)
 	{
-		if ((a % 3 == 0) && (a % 5 == 0))
+		if (i % 3 == 0 && i  % 5 == 0)
 		{
-			putchar("FizzBuzz");
+			printf("FizzBuzz");
+			putchar(' ');
 		}
-		else if (a % 3 == 0)
+		else if (i % 3 == 0)
 		{
-			putchar("Fizz");
+			printf("Fizz");
+			putchar(' ');
 		}
-		else if (a % 5 == 0)
+		else if (i % 5 == 0)
 		{
-			putchar("Buzz");
+			if (i == 100)
+			{
+				printf("Buzz");
+			}
+			else
+			{
+				printf("Buzz");
+				putchar(' ');
+			}
 		}
 		else
 		{
-			putchar("%d", a);
-		}
-		if (a != 100)
-		{
-			putchar(" ");
+			printf("%d", i);
+			putchar(' ');
 		}
 	}
-	putchar("\n");
+	putchar('\n');
 	return (0);
 }
