@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void rev-printer(char *s, int n)
+void rev_printer(char *s, int n)
 {
 	if (n < 0)
 		return;
