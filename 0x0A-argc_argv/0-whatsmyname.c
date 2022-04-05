@@ -5,8 +5,10 @@
 * @argv: a pointer to argument strings
 * Return: always 1
 */
+
 int main(int argc, char *argv[])
 {
+
 	if (argc >= 0)
 		puts(argv[0]);
 	return (0);
