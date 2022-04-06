@@ -1,28 +1,40 @@
 #include "main.h"
-
 /**
- * _sqrt_recursion - main funct
- * @n: int n
- * Return: int
+ * BSTsqrt - calculate the square root of a given number using binary search
+ * @start: index the half problem start
+ * @end: large value the half problem not exceed
+ * @m: the varaible we want to compute
+ * Return: the square root of n
  */
-int _sqrt_recursion(int n)
+
+int BSTsqrt(int start, int end, int m)
 {
-	return (_sqrt(n, 1));
+	long mid;
+
+	if (end >= start)
+	{
+		mid = start + (end - start) / 2;
+		if (mid * mid == m)
+			return (mid);
+		if (mid * mid > m)
+			return (BSTsqrt(start, mid - 1, m));
+		if (mid * mid < m)
+			return (BSTsqrt(mid + 1, end, m));
+	}
+	return (-1);
 }
 
 /**
- * _sqrt - _sqrt_recursion
- * @n: integer paramtr
- * @i: integer parameter
- * Return: sqrt
- */
-int _sqrt(int n, int i)
+ * _sqrt_recursion - finds the natural square root of a number
+ * @n: given number
+ * Return: square root of n or -1
+ **/
+
+int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	if ((i * i) > n)
-		return (-1);
-	if (i * i == n)
-		return (i);
-	return (_sqrt(n, i + 1));
+	if (n == 0 || n == 1)
+		return (n);
+	return (BSTsqrt(2, n, n));
 }
