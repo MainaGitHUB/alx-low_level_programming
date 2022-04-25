@@ -15,7 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	len = size * nmemb;
 	if (size == 0 || nmemb == 0)
 		return (NULL);
-	p = maloc(len);
+	p = malloc(len);
 	if (p == NULL)
 		return (NULL);
 	memset(p, 0, len);
