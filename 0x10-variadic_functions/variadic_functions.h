@@ -19,4 +19,10 @@ void print_float(va_list arg);
  *@f: Pointer to function to be executed according to op.
  *
  */
+typedef struct Printer
+{
+	char op;
+	void (*f)(va_list arg);
+} Printer;
+
 #endif

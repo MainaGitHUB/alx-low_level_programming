@@ -5,7 +5,7 @@
  * @separator: seperators
  * @n: number of arguements
  */
-void print_strings(const char * separator, const unsigned int n, ...)
+void print_string(const char *separator, const unsigned int n, ...)
 {
 	va_list strings;
 	unsigned int i;
@@ -16,7 +16,7 @@ void print_strings(const char * separator, const unsigned int n, ...)
 	{
 		ptr = va_arg(strings, char*);
 		if (ptr == NULL)
-			printf("(nil)");
+			printf("(nill)");
 		else
 		{
 			printf("%s", ptr);
