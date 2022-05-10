@@ -5,7 +5,7 @@
  * @n: the size of the variadic variable
  * Return: always sum of the number
  */
-int sun_them_all(const unsigned int n, ...)
+int sum_them_all(const unsigned int n, ...)
 {
 	int sum = 0;
 	unsigned int i;
