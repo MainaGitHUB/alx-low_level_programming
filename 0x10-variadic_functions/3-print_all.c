@@ -1,50 +1,96 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-#include <stdarg.h>
 /**
-* print_all - print char, integer, float and string
-* @format: format
+* print_char - Function that display a char.
+*
+*@arg: va_list variable.
+*
+*Return: Void.
 */
+void print_char(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
+}
+/**
+* print_int - Function that display an integer.
+*
+*@arg: va_list variable.
+*
+*Return: Void.
+*/
+void print_int(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+/**
+*print_str - Function that display a string.
+*
+*@arg: va_list variable.
+*
+*Return: Void.
+*/
+void print_str(va_list arg)
+{
+	char *str = va_arg(arg, char *);
+
+	if (str)
+	{
+		printf("%s", str);
+		return;
+	}
+	printf("%p", str);
+}
+/**
+*print_float - Function that display a float.
+*
+*@arg: va_list variable.
+*
+*Return: Void.
+*/
+void print_float(va_list arg)
+{
+	printf("%f", va_arg(arg, double));
+}
+
+/**
+ *print_all - function that print according to a string parameter.
+ *
+ *@format: string paramater.
+ *
+ *Return: Void.
+ */
+
 void print_all(const char * const format, ...)
 {
-	va_list list;
-	unsigned int j = 0, start = 0;
-	char *p;
+	Printer  Corr[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_str},
+		{0, NULL}
+	};
+	unsigned int i = 0, j = 0;
+	va_list ap;
+	char *separator = "";
 
-	va-start(list, format);
-	while (format && format[j] != '\0)
+	va_start(ap, format);
+	while (format && format[i])
 	{
-		switch (format[j])
-		{ case 'c':
-			switch (start)
-			{ case 1: printf(", "); }
-			start = 1;
-			printf("%c", va_arg(list, int));
-			break;
-			case 'i':
-			switch (start)
-			{ case 1: printf(", "); }
-			start = 1;
-			printf("%i", va_arg(list, int));
-			break;
-		case 'f':
-			switch (start)
-			{ case 1: printf(", "); }
-			start = 1;
-			printf("%f", va_arg(list, double));
-			break;
-		case 's':
-			switch (start)
-			{case 1: printf(", "); }
-			start = 1;
-			p = va_arg(list, char*);
-			if (p)
-			{ printf("%s", p);
-				break; }
-			printf("%p", p);
-			break; }
-		j++;
+		j = 0;
+		while (Corr[j].op)
+		{
+			if (Corr[j].op == format[i])
+			{
+				printf("%s", separator);
+				Corr[j].f(ap);
+				separator = ", ";
+				break;
+			}
+			j++;
+		}
+		i++;
 	}
+
+	va_end(ap);
 	printf("\n");
-	va_end(list);
+
 }
